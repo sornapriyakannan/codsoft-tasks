@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("https://cdn.pixabay.com/photo/2015/11/15/08/20/mathematics-1044114_960_720.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-position: center center;
+  height: 100vh; 
+  margin: 0px; 
+  padding:150px;
+  
+}
+
+
+.container {
+  background:cadetblue;
+  padding: 15px;
+  width: 230px;
+  border-radius: 10px;
+}
+.calc-text {
+  margin-bottom: 10px;
+  padding-left: 5px;
+  background-color: #cacacaea;
+  border-radius: 7px;
+  height: 65px;
+}
+
+.calc-text p {
+  width: 100%;
+  font-size: 2.0rem;
+  text-align: end;
+  background: transparent;
+  color: rgb(37, 37, 37);
+  color: 333;
+  border: none;
+  outline: none;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+button {
+  background:#2b2b2b;
+  color: #c1c1c1;
+  font-size: 1.0rem;
+  border: none;
+  border-radius: 35%;
+  cursor: pointer;
+  height: 30px;
+  width: 35px;
+}
+
+button:active,
+button:focus {
+  filter: brightness(100%);
+}
+
+.calc-keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 15px;
+  grid-column-gap: 10px;
+}
+
+.key-zero {
+  grid-column: span 2;
+  width: 100%;
+  border-radius: 30px;
+}
+
+.key-operate {
+  background: #2b2b2b;
+  color: #fd4800;
+  font-size: 1.15rem;
+}
+
+.key-others {
+  background: #2b2b2b;
+  color: #fd4800;
+  font-size: 0.75rem;
+  font-weight:300;
+}
+
+
+.my h1 {
+             color: #1a1a1aee;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: -20px;
+        }
+
+    </style>
+  
+</head>
+  <body>
+    
+    <section>
+      <div class="my">
+      <h1 style="text-align: left; color:white;">Calculator</h1></div>
+      <br>
+
+  
+     <div class="container">
+        <div class="calc-text">
+            <p name="user-input" id="user-input">0</p>
+            
+        </div>
+        <div class="calc-keys">
+            <button type="button" class="key-others operations">AC</button>
+            <button type="button" class="key-others operations">DEL</button>
+            <button type="button" class="key-others operations">%</button>
+            <button type="button" class="key-operate operations">/</button>
+            <button type="button" class="numbers">7</button>
+            <button type="button" class="numbers">8</button>
+            <button type="button" class="numbers">9</button>
+            <button type="button" class="key-operate operations">*</button>
+            <button type="button" class="numbers">4</button>
+            <button type="button" class="numbers">5</button>
+            <button type="button" class="numbers">6</button>
+            <button type="button" class="key-operate operations">-</button>
+            <button type="button" class="numbers">1</button>
+            <button type="button" class="numbers">2</button>
+            <button type="button" class="numbers">3</button>
+            <button type="button" class="key-operate operations">+</button>
+            <button type="button" class="key-zero numbers">0</button>
+            <button type="button" class="numbers">.</button>
+            <button type="button" class="key-operate operations">=</button>
+        </div>
+    </div>
+</section>
+    <script type="text/javascript">
+        const inputValue = document.getElementById("user-input");
+        document.querySelectorAll(".numbers").forEach(function (item) {
+            item.addEventListener("click", function (e) {
+                if (inputValue.innerText === "NaN" || inputValue.innerText === "0") {
+                    inputValue.innerText = "";
+                }
+                inputValue.innerText += e.target.innerHTML.trim();
+            });
+        });
+        document.querySelectorAll(".operations").forEach(function (item) {
+            item.addEventListener("click", function (e) {
+                const operator = e.target.innerHTML.trim();
+                const lastChar = inputValue.innerText.slice(-1);
+                if (operator === "=") {
+                    inputValue.innerText = eval(inputValue.innerText);
+                }
+                else if (operator === "AC") {
+                    inputValue.innerText = "0";
+                }
+                else if (operator === "DEL") {
+                    inputValue.innerText = inputValue.innerText.slice(0, -1) || "0";
+                }
+                else {
+                    if (isNaN(lastChar)) {
+                        inputValue.innerText = inputValue.innerText.slice(0, -1) + operator;
+                    } else {
+                        inputValue.innerText += operator;
+                    }
+                }
+            });
+        });
+    </script>
+    
+  </body>
+</html>

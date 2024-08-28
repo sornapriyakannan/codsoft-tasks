@@ -1,0 +1,555 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fruit Shop Landing Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+		:root {
+  font-size: 7px;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior:initial;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+#header {
+  height: 7rem;
+  font-family:'Times New Roman', Times, serif;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.945);
+  padding: 1rem 0;
+  position: sticky;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  box-shadow: 0 6px 31px -2px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 800px) {
+  #header {
+    text-align: center;
+    height: auto;
+	margin-left:auto;
+  }
+}
+.header-content-div {
+  max-width: 95rem;
+  width: auto;
+  margin: auto;
+}
+@media (max-width: 991px) {
+  .header-content-div {
+    max-width: 75rem;
+  }
+}
+#header-img {
+	margin-top: -5px;
+  height: 8.5rem;
+  width: 26rem;
+  margin-left: -110px;
+}
+@media (max-width: 800px) {
+  #header-img {
+    height: 4rem;
+  }
+}
+nav {
+  position: relative;
+  top: 0.7rem;
+  left: 90px;
+  float: right;
+  font-size: 1.7rem;
+  font-weight: 600;
+
+  padding: 2rem 0;
+}
+@media (max-width: 800px) {
+  nav {
+    position: static;
+    float: none;
+    font-size: 1.4rem;
+    padding: 0.5rem 1rem;
+  }
+}
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  margin: 0 0.5rem;
+  padding: 0 0.6rem;
+  transition: border-bottom 0.2s;
+}
+@media (max-width: 475px) {
+  .nav-link {
+    margin: 0 0.2rem;
+    padding: 0 0.2rem;
+    font-size: 1.2rem;
+  }
+}
+.nav-link:hover {
+  color: #e23d3d;
+  border-bottom: 2px solid #e23d3d;
+}
+.nav-link:active {
+  color: #f84848;
+}
+.flexible {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+.home-sec {
+  font-family: "Montserrat", sans-serif;
+  background-color:green;
+  text-align: start;
+  min-height: 50rem;
+  height: auto;
+  margin: 0 auto 5rem auto;
+  justify-content: start;
+  max-width: 95rem;
+  color:white;
+}
+@media (max-width: 800px) {
+  .home-sec {
+    flex-flow: column wrap;
+    max-width: 100%;
+  }
+}
+.eye-grabber {
+  flex: 1.2;
+  padding: 0 7rem;
+}
+@media (max-width: 800px) {
+  .eye-grabber {
+    max-width: max-content;
+    padding-bottom: 8rem;
+  }
+}
+.eye-grabber h1 {
+  font-size: 4rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.eye-grabber h2 {
+  font-size: 2.0rem;
+  font-weight: 500;
+  color: white;
+}
+.eye-grabber-img {
+  flex: 1.5;
+}
+@media (max-width: 800px) {
+  .eye-grabber-img {
+    width: 100%;
+  }
+}
+.eye-grabber-img img {
+  max-width: 100%;
+}
+.btn {
+  border: none;
+  font-size: 1.75rem;
+  border-radius: 0.4rem;
+  padding: 1.85rem;
+  background-color: #e23d3d;
+  color: #fafafa;
+  outline: 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: #383838;
+  cursor: pointer;
+}
+.btn:active {
+  transform: scale(0.9);
+}
+.section-heading {
+  font-size: 2.5rem;
+  font-family:"Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0;
+  padding: 5rem 0 5rem 0;
+  text-align: center;
+}
+.sec-content-div {
+  font-size: 2.0rem;
+  text-align: start;
+  padding: 0 2rem 5rem 2rem;
+  width: auto;
+  justify-content: space-around;
+  max-width: 95rem;
+  margin: auto;
+  word-spacing: 0.2rem;
+  line-height: 19px;
+  font-family: "Montserrat", sans-serif;
+}
+.sec-padding {
+  padding: 8rem 0 10rem 0;
+}
+
+#about {
+  background-color:lightgreen;
+  color:black;
+  margin-top:-10px;
+}
+#about img {
+  
+  height: 300px;
+  width: 500px;
+
+  border-radius: 1.2rem;
+  
+}
+.tite{
+  background-color: #fafafaba;
+  height: 25rem;
+  width: 25rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  padding: 1.5rem;
+  margin: 1.5rem;
+}
+.tite img{
+	
+  max-width: 25rem;
+  max-height: 25rem;
+  border-radius: 0.5rem;
+}
+#varieties {
+  background-color: #e3e3e3;
+}
+.tile {
+  background-color: #fafafa;
+  height: 40rem;
+  width: 25rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  padding: 1.5rem;
+  margin: 1.5rem;
+}
+@media (max-width: 680px) {
+  .tile {
+    width: auto;
+    max-width: 100%;
+    min-width: 20rem;
+    margin: 1.5rem auto;
+    height: auto;
+  }
+}
+.tile img {
+  width: 100%;
+  max-width: 48rem;
+  border-radius: 0.5rem;
+}
+.tile h4 {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1rem 0;
+  color: #e23d3d;
+  margin: 0;
+}
+.tile p {
+  font-size: 1.6rem;
+  padding: 0;
+  margin: 0;
+}
+.tile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.19), 0 16px 16px rgba(0, 0, 0, 0.23);
+}
+
+
+
+#contact h6 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+#contact {
+    background-color: #161616e4;
+    color: #fafafa;
+  padding: 4rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.contact-info {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.contact-info p {
+  font-size: 1.6rem;
+}
+
+.contact-form {
+  flex: 1;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.4rem;
+  font-size: 1.6rem;
+}
+
+.contact-form input[type="submit"] {
+  background-color: #e23d3d;
+  color: #fafafa;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-form input[type="submit"]:hover {
+  background-color: #383838;
+}
+#success-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #d4edda;
+  color: #155724;
+  border-radius: 0.4rem;
+  border: 1px solid #c3e6cb;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+	</style>
+  </head>
+  <body>
+    <header id="header">
+      <div class="header-content-div">
+        <a href="#home-sec">
+<img
+            src="https://tse1.mm.bing.net/th?id=OIP.j9V5-E0k-Q_sfPGIS9HHBAHaHa&pid=Api&P=0&h=220.jpg"
+            alt="Company Logo"
+            id="header-img"/></a>
+        <nav id="nav-bar">
+			<a href="#home-sec" class="nav-link">HOME </a>
+         
+          <a href="#varieties" class="nav-link">VARIETIES</a>
+		  <a href="#about" class="nav-link">ABOUT</a>
+          <a href="#contact" class="nav-link">CONTACT</a>
+          
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section id="home-sec" class="flexible home-sec">
+        <div class="eye-grabber-img">
+          <img
+            src="https://tse1.mm.bing.net/th?id=OIP.YB3PLk9SrtoGQmwv88N8mAHaGB&pid=Api&P=0&h=220.png"
+            alt="Image of vegtables"
+          />
+        </div>
+        <div class="eye-grabber">
+          <h1>Fresh, Nutritious, Pure!</h1>
+          <h2>
+            Our 100% organic vegetables are grown with care, offering vibrant colors and rich flavors straight from the farm to your table.
+          </h2>
+          <button class="btn" onclick="window.location.href = '#contact';">
+            Buy Now
+          </button>
+        </div>
+      </section>
+      <section id="about" class="sec-padding">
+        <h3 class="section-heading">ABOUT US</h3>
+        <div class="sec-content-div flexible">
+          <p>
+			With decades of expertise in the cultivation and distribution of vegetables, we are committed to delivering exceptional quality produce. Our vegetables flourish across a range of climates, from fertile valleys to sun-drenched fields. Grown in rich soil and nurtured with care, our vegetables from Kashmir offer unmatched freshness and flavor. The perfect blend of ideal soil, favorable climate, and meticulous farming practices results in vegetables that are not only rich in taste and color but also stand out in quality and nutrition, making them a preferred choice in the global market.
+			<div class="tite">
+				<img
+              src="https://tse3.mm.bing.net/th?id=OIP.Weu7ZpLsrFvv0recSZuRrAHaHa&pid=Api&P=0&h=220"
+              
+            />
+			  </div>
+			  <div class="tite">
+				<img
+              src="https://tse1.mm.bing.net/th?id=OIP.ibHcm2JzP9UxrE8XWR-JywAAAA&pid=Api&P=0&h=220.png"
+            />
+			  </div>
+			  <div class="tite">
+				<img
+              src="https://tse4.mm.bing.net/th?id=OIP.jtYQN5qFCmgi_ZUl9w_vTwHaE7&pid=Api&P=0&h=220"
+    
+            />
+			
+			  </div>
+        </div>
+      </section>
+      <section id="varieties" class="sec-padding">
+        <h3 class="section-heading">VARIETIES</h3>
+        <div class="sec-content-div flexible">
+          
+          <div class="tile">
+            <img
+              src="https://tse2.mm.bing.net/th?id=OIP.lKpQQgot75kZHtuTrqXa5gHaEx&pid=Api&P=0&h=220"
+              
+            />
+            <h4>Ladies' finger</h4>
+           <p>Ladies' finger, also known as okra, is a nutritious vegetable rich in vitamins and fiber, prized for its tender texture and mild flavor. It's a versatile ingredient, perfect for a variety of dishes, from stir-fries to stews.</p>
+          </div>
+          <div class="tile">
+            <img
+              src="https://tse1.mm.bing.net/th?id=OIP.t8TJz_RynXyi1akDZ6KEHgAAAA&pid=Api&P=0&h=220" height="150"
+            />
+            <h4>Tomato</h4>
+           <p>Juicy and tangy, tomatoes are rich in vitamins and antioxidants, ideal for salads, sauces, and soups.</p>
+           </div>
+          <div class="tile">
+            <img
+              src="https://tse3.mm.bing.net/th?id=OIP.oDkhsHIkSOUq9GOabDjdBAHaGt&pid=Api&P=0&h=220"
+            
+            />
+            <h4>Broccoli</h4>
+            <p>Packed with vitamins and fiber, broccoli offers a crisp texture and a slightly bitter flavor, great for steaming or stir-frying</p>
+            </div>
+          <div class="tile">
+            <img
+              src="https://tse3.mm.bing.net/th?id=OIP.MAIgGI6xRjMVX4mHIl_GtgHaFY&pid=Api&P=0&h=220"
+            
+            />
+            <h4>Carrot</h4>
+            <p>Sweet and crunchy, carrots are high in beta-carotene and perfect for snacking, salads, or cooking.       </p>
+          </div>
+          <div class="tile">
+            <img
+              src="https://tse4.mm.bing.net/th?id=OIP.jtYQN5qFCmgi_ZUl9w_vTwHaE7&pid=Api&P=0&h=220"
+            />
+            <h4>Potato</h4>
+            <p>
+				Versatile and hearty, potatoes are a staple food, offering comfort in dishes like mashed potatoes, fries, and stews.</p>
+          </div>
+          <div class="tile">
+            <img
+              src="https://tse3.mm.bing.net/th?id=OIP.PUYfl9AYXzqEyfWERWrL0QHaF1&pid=Api&P=0&h=220"
+            />
+            <h4>Cauliflower</h4>
+            <p>
+				Mild and versatile, cauliflower can be used in a variety of dishes, from low-carb rice alternatives to creamy soups.</p>
+          </div>
+		  <div class="tile">
+            <img
+              src="https://tse1.mm.bing.net/th?id=OIP.-OLNc_JDiDQBJpFf1KPeLAHaIH&pid=Api&P=0&h=220" height="150"
+            />
+            <h4>Cabage</h4>
+            <p>
+                Crisp and slightly peppery, cabbage is rich in nutrients and great for salads, stir-fries, or as a cooked side dish.
+            </p>
+          </div>
+		  
+		  <div class="tile">
+            <img
+              src="https://tse2.mm.bing.net/th?id=OIP.k1IS3S2oKkiq0G-cw-syAAHaGk&pid=Api&P=0&h=220"
+            />
+            <h4>Brinjal</h4>
+            <p>
+                With a meaty texture and subtle flavor, brinjal is excellent for grilling, roasting, or adding depth to curries.</p>
+          </div>
+
+          <div class="tile">
+            <img
+              src="https://tse1.mm.bing.net/th?id=OIP.6WleMVdcbLBgp6oSz9eCSgHaFS&pid=Api&P=0&h=220"
+            />
+            <h4>Pumpkin</h4>
+            <p>
+				Sweet and nutritious, pumpkin is perfect for soups, pies, and roasted dishes, packed with vitamins and fiber. </p>
+          </div>
+        </div>
+      </section>
+      
+      
+      <section class="sec-padding" id="contact">
+        <h3 class="section-heading">Get in Touch</h3>
+        <div class="sec-content-div flexible">
+          <div class="contact-info">
+            <h6>We'd love to hear from you! Reach out to us for orders or inquiries:</h6>
+            <p>
+              <strong>Address:</strong> 123 Veggie Lane,cbe India<br>
+              <strong>Phone:</strong> 424-223344<br>
+              <strong>Email:</strong> veggies@vegshop.com
+            </p>
+          </div>
+          <div class="contact-form">
+            <form
+            id="contact-form"
+            onsubmit="handleFormSubmit(event)"
+          >
+              <label for="name">Name:</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Your Name"
+                required
+              />
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Your Email Address"
+                required
+              />
+              <label for="message">Message:</label>
+              <textarea
+                name="message"
+                id="message"
+                placeholder="Your Message"
+                rows="5"
+                required
+              ></textarea>
+              <input type="submit" class="btn" id="submit" value="Send Message" />
+
+            </form>
+            <div id="success-message" class="hidden">
+                <p>Thank you for reaching out! We will get back to you shortly.</p>
+              </div>
+          </div>
+        </div>
+      </section>
+      
+    </main>
+    <script>
+        function handleFormSubmit(event) {
+          event.preventDefault(); // Prevent the default form submission
+      
+          // Display the success message
+          const successMessage = document.getElementById('success-message');
+          successMessage.classList.remove('hidden');
+      
+          // Optionally, you can reset the form fields
+          document.getElementById('contact-form').reset();
+        }
+      </script>
+      
+    
+   
+  </body>
+</html>
